@@ -1,7 +1,5 @@
 package elastic
 
-import "fmt"
-
 // KNNQuery allows to define KNN as filters.
 type KNNQuery struct {
 	query Query
@@ -40,6 +38,5 @@ func (q *KNNQuery) Source() (interface{}, error) {
 	source["knn"] = map[string]interface{}{}
 	source["knn"][q.field] = field
 
-	fmt.Println(fmt.Sprintf("%+v", source))
 	return source, nil
 }
